@@ -1,7 +1,13 @@
 {
   "name": "image-search-abstraction-layer",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.0.0"
+  },
   "description": "get the image URLs, alt text and page urls for a set of images relating to a given search string",
+  "scripts": {
+    "start": "node app"
+  },
   "main": "app.js",
   "repository": "https://github.com/TheeMattOliver/image-search-abstraction-layer.git",
   "author": "Matt Oliver <mattoliver.mattoliver@gmail.com>",
