@@ -25,7 +25,9 @@
     <script src="/js/app.js"></script>
   </head>
 
-  <body>
+  <body ng-app="imgurApp">
+    
+    <!-- Nav -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -38,8 +40,41 @@
         </div>
       </div>
     </nav>
-    <!-- Dynamically render templates -->
-    <div class="container" ng-view>
+    
+    <!-- Dynamically render  -->
+   
+ <!--  <div ng-controller="MyCtrl">
+    <div class="row">
+        
+        <div class="input-group input-group-lrg">
+          <h1>Your search term: {{searchTerm}}</h1>
+        <input type="text" ng-model="searchTerm"/>
+        <button ng-click="findWeather()">submit</button>
+    
     </div>
+  </div> -->
+<div class="row">
+<div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="Text input with segmented button dropdown">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-secondary">Action</button>
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
+
+ 
