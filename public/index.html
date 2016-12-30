@@ -43,20 +43,26 @@
       </div>
     </nav>
   
+  <div class="row">
+      <div class="col-md-4">
     <div ng-controller="formCtrl">
-    
-
     <h1> Search Imgur:</h1>
-
-     
         <input type="text" ng-model="user.searchTerm">
-  
-        <button class="btn btn-primary" ng-click="reset()">RESET</button>
-   
-      
+        <button class="btn btn-primary" ng-click="fetch()">Search</button>
+      </div>
+    </div>
       <p>{{user}}</p>
 
-    <h1> Your JSON object: </h1>  
+      </div>
+
+      
+    
+   
+
+
+  
+
+    <h1> The JSON object we get back from the Imgur API: </h1>  
   
 
     </div><!-- end imgurApp-->
