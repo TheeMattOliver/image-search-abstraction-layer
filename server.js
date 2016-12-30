@@ -2,11 +2,17 @@ if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
 }
 
+const bodyParser = require('body-parser');
+
 const db = require('./config/db');
 const express = require('express');
 const routes = require('./routes/index');
 
 const app = express();
+
+app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
+
 
 app.use('/', routes);
 

@@ -1,12 +1,13 @@
-const express = require('express')
+const express = require('express');
+const path = require('path');
 const router = express.Router();
 const imgur = require('../services/imgur');
 const History = require('../models/history');
 
 // landing page
 router.get('/', (req, res) => {
-	res.send('Hello world!');
-})
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 // display 10 latest searches
 router.get('/latest', (req, res) => {

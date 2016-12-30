@@ -6,13 +6,14 @@
   },
   "description": "get the image URLs, alt text and page urls for a set of images relating to a given search string",
   "scripts": {
-    "start": "node app"
+    "start": "node server"
   },
   "main": "app.js",
   "repository": "https://github.com/TheeMattOliver/image-search-abstraction-layer.git",
   "author": "Matt Oliver <mattoliver.mattoliver@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.7.5",
     "nodemon": "^1.11.0",
