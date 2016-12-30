@@ -1,0 +1,18 @@
+{
+  "name": "image-search-abstraction-layer",
+  "version": "1.0.0",
+  "description": "get the image URLs, alt text and page urls for a set of images relating to a given search string",
+  "main": "app.js",
+  "repository": "https://github.com/TheeMattOliver/image-search-abstraction-layer.git",
+  "author": "Matt Oliver <mattoliver.mattoliver@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.7.5",
+    "nodemon": "^1.11.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0"
+  }
+}
