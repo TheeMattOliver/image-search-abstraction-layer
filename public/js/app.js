@@ -1,18 +1,20 @@
+angular.module('imgurApp', [])
+ .controller('formCtrl', function($scope) {
+    $scope.master = {searchTerm:"Your search term..."};
+    $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
 
-angular.module('imgurApp',[]).controller("MyCtrl", MyCtrl);
 
 
-function MyCtrl($scope, $http) {
+// angular.module('imgurApp', [])
 
-    $scope.search_term = "";
-    
-    $scope.findImages = function(){
-    
-    $http.get("/search/" + $scope.location).success(function(data){
-	    $scope.searchTerm = data.item;
-	    $scope.windSpeed = data.wind.speed;
-	    $scope.windDegree = data.wind.deg;
-
-    }) 
-    }
-}
+// 	.controller('imgurDataController', ['$scope','$http', function($scope,$http) {
+// 		$scope.search_term = `${search_term}`;
+// 		$http.get('/search/'+$scope.search_term)
+// 		        .success(function(data) {
+// 		            $scope.userData = data;
+// 		        });
+// 		}]);

@@ -27,6 +27,8 @@
 
   <body ng-app="imgurApp">
     
+    <div class="container-fluid">
+
     <!-- Nav -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -40,19 +42,25 @@
         </div>
       </div>
     </nav>
+  
+    <div ng-controller="formCtrl">
     
-    <!-- Dynamically render  -->
+
+    <h1> Search Imgur:</h1>
+
+     
+        <input type="text" ng-model="user.searchTerm">
+  
+        <button class="btn btn-primary" ng-click="reset()">RESET</button>
    
- <!--  <div ng-controller="MyCtrl">
-    <div class="row">
-        
-        <div class="input-group input-group-lrg">
-          <h1>Your search term: {{searchTerm}}</h1>
-        <input type="text" ng-model="searchTerm"/>
-        <button ng-click="findWeather()">submit</button>
-    
-    </div>
-  </div> -->
+      
+      <p>{{user}}</p>
+
+    <h1> Your JSON object: </h1>  
+  
+
+    </div><!-- end imgurApp-->
+
 
   </body>
 </html>
