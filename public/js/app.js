@@ -11,7 +11,7 @@ angular.module('imgurApp', ['ngRoute'])
         $routeProvider
             .when("/", {
                 // specify which template to display
-                templateUrl: "search.html",
+                templateUrl: "index.html",
                 controller: "searchCtrl"
             })
             .when("/search/:item", {
