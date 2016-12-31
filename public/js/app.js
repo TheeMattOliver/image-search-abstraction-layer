@@ -15,11 +15,11 @@ angular.module('imgurApp', [])
 angular.module('imgurApp', [])
 
 .controller('formCtrl', function($scope, $http) {
-  $scope.search = function() {
 
-    $http.get('/latest')
+  $scope.search = function() {
+    $http.get('/search/'+ $scope.searchTerm)
       .success(function(data, status, headers, config) {
-        console.log('Button was clicked!')
+        console.log('Success!')
         $scope.results = data;
       })
       .error(function(data, status, headers, config) {
@@ -28,4 +28,5 @@ angular.module('imgurApp', [])
       });
   }  
 
+  $scope.search();
 });
