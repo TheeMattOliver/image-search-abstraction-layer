@@ -14,6 +14,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+     <!-- Latest compiled and minified FA CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Create some padding for body -->
     <style>
       body {
@@ -65,7 +67,7 @@
           <h1> Here's the JSON object we get back from the Imgur API: </h1> 
           <ul>
            <li ng-repeat="item in results">
-            {{user.results}}
+            <span ng-bind="results"></span>
            </li>
           </ul>
       </div>

@@ -12,15 +12,20 @@ angular.module('imgurApp', [])
 // });
 
 
-angular.module("imgurApp", [])
+angular.module('imgurApp', [])
 
-.controller("formCtrl", function($scope, $http) {
-  $http.get('/search/:item')
-    .success(function(data, status, headers, config) {
-      console.log("Success!")
-      $scope.results = data;
-    })
-    .error(function(data, status, headers, config) {
-      // log error
-    });
+.controller('formCtrl', function($scope, $http) {
+  $scope.search = function() {
+
+    $http.get('/latest')
+      .success(function(data, status, headers, config) {
+        console.log('Button was clicked!')
+        $scope.results = data;
+      })
+      .error(function(data, status, headers, config) {
+        // log error
+        console.log('Error')
+      });
+  }  
+
 });

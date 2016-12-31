@@ -26,6 +26,7 @@ router.get('/search/:item', (req, res) =>{
   imgur.getImage(req.params.item, req.query.offset).then(data => {
     new History({ search_term: req.params.item }).save();
     res.json(data)
+    console.log('data :', data);
   })
 
 });
