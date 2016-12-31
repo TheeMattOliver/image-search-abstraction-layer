@@ -6,7 +6,7 @@
   },
   "description": "get the image URLs, alt text and page urls for a set of images relating to a given search string",
   "scripts": {
-    "start": "node server"
+    "start": "node server.js"
   },
   "main": "app.js",
   "repository": "https://github.com/TheeMattOliver/image-search-abstraction-layer.git",
