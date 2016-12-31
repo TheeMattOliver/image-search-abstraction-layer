@@ -39,21 +39,23 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
+            <li class="active" ><a href="#/" data-toggle="tooltip" data-placement="top" title="Basic Search"><i class="fa fa-home" aria-hidden="true"></i>Basic Search</a></li>
+            <li><a href="/latest"><i class="fa fa-database" aria-hidden="true"></i> Latest</a></li>
+            <li><a href="#/"><i class="fa fa-file-image-o" aria-hidden="true"></i> Images</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
 
-  <div ng-controller="formCtrl">
+  <div ng-controller="searchCtrl">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <h1> Enter a search term to query the Imgur API:</h1>
               <input type="text" ng-model="searchTerm">
               <button class="btn btn-primary" ng-click="search()">Search</button>
-              <h3>"{{searchTerm}}"</h3>
+              <!-- <h3>"{{searchTerm}}"</h3> -->
           </div>
         </div>
       </div>
@@ -62,12 +64,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1> Here's the JSON object we get back from the Imgur API: </h1> 
-          <!-- <ul>
-           <li ng-repeat="item in results"> -->
+          <h1> Here's the JSON object we get back from the Imgur API for <span ng-style="{color:'red'}">{{searchTerm}}</span>:</h1> 
+         
             {{results}}
-         <!--   </li> -->
-          <!-- </ul> -->
+  
+
         </div>
       </div>
     </div>
@@ -76,6 +77,12 @@
     </div><!-- end imgurApp-->
 
 
+  <!-- tooltips -->
+  <script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  </script>
   </body>
 </html>
 

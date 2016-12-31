@@ -1,4 +1,4 @@
-angular.module('imgurApp', [])
+angular.module('imgurApp', ['ngRoute'])
 
 // .service('item', function($http) {
 //   return $http({method: 'GET', url:'/search/:item'}).
@@ -7,26 +7,41 @@ angular.module('imgurApp', [])
 //            return response.data;
 //          });
 // })
-//  .controller('formCtrl', function($scope) {
-//     $scope.user = angular.copy($scope.master);
-// });
+  .config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                // specify which template to display
+                templateUrl: "index.html",
+                controller: "searchCtrl"
+            })
+            .when("/search/:item", {
+                controller: "searchCtrl",
+                templateUrl: "index.html"
+            })
+            .when("/latest", {
+                controller: "listCtrl",
+                templateUrl: "list.html"
+            })
+            .otherwise({
+                redirectTo: "/"
+            })
+    })
+
+  .controller('searchCtrl', function($scope, $http) {
+     $scope.search = function() {
+      $http.get('/search/'+ $scope.searchTerm)
+        .success(function(data, status, headers, config) {
+          console.log('Success!');
+          console.log("Here's the data: ", data);
+          $scope.results = data;
+        })
+        .error(function(data, status, headers, config) {
+          // log error
+          console.log('Error')
+        });
+    }  
+  })
 
 
-angular.module('imgurApp', [])
 
-.controller('formCtrl', function($scope, $http) {
 
-  $scope.search = function() {
-    $http.get('/search/'+ $scope.searchTerm)
-      .success(function(data, status, headers, config) {
-        console.log('Success!');
-        console.log("Here's the data: ", data);
-        $scope.results = data;
-      })
-      .error(function(data, status, headers, config) {
-        // log error
-        console.log('Error')
-      });
-  }  
-
-});
