@@ -46,11 +46,10 @@
     </nav>
 
 
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div ng-controller="formCtrl">
+  <div ng-controller="formCtrl">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
           <h1> Enter a search term to query the Imgur API:</h1>
               <input type="text" ng-model="searchTerm">
               <button class="btn btn-primary" ng-click="search()">Search</button>
@@ -58,23 +57,22 @@
           </div>
         </div>
       </div>
-  </div>
-      
-  
+        
+
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <h1> Here's the JSON object we get back from the Imgur API: </h1> 
-          <ul>
-           <li ng-repeat="item in results">
-            <span ng-bind="results"></span>
-           </li>
-          </ul>
+          <!-- <ul>
+           <li ng-repeat="item in results"> -->
+            {{results}}
+         <!--   </li> -->
+          <!-- </ul> -->
+        </div>
       </div>
     </div>
-  </div>
-
-
+  
+  </div><!-- controller -->
     </div><!-- end imgurApp-->
 
 

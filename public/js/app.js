@@ -19,7 +19,8 @@ angular.module('imgurApp', [])
   $scope.search = function() {
     $http.get('/search/'+ $scope.searchTerm)
       .success(function(data, status, headers, config) {
-        console.log('Success!')
+        console.log('Success!');
+        console.log("Here's the data: ", data);
         $scope.results = data;
       })
       .error(function(data, status, headers, config) {
@@ -28,5 +29,4 @@ angular.module('imgurApp', [])
       });
   }  
 
-  $scope.search();
 });
