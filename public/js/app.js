@@ -11,7 +11,7 @@ angular.module('imgurApp', ['ngRoute'])
         $routeProvider
             .when("/", {
                 // specify which template to display
-                templateUrl: "index.html",
+                templateUrl: "search.html",
                 controller: "searchCtrl"
             })
             .when("/search/:item", {
@@ -41,6 +41,22 @@ angular.module('imgurApp', ['ngRoute'])
         });
     }  
   })
+  .controller("listCtrl", function($scope) {
+    $scope.renderList = function() {
+          $http.get('/latest')
+            .success(function(data, status, headers, config) {
+              console.log('Success!');
+              console.log("Here's the data: ", data);
+              $scope.results = data;
+            })
+            .error(function(data, status, headers, config) {
+              // log error
+              console.log('Error')
+            });
+        }  
+
+      $scope.renderList();
+    })
 
 
 

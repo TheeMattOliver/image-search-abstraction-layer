@@ -9,6 +9,14 @@ router.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+// render partials
+exports.partials = function(req, res){
+  var filename = req.params.filename;
+  if(!filename) return;  // might want to change this
+  res.render("partials/" + filename );
+};
+
+
 // display 10 latest searches
 router.get('/latest', (req, res) => {
   ('Querying database!');
