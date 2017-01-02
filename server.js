@@ -14,6 +14,8 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
 app.use('/', routes);
+app.get('*', routes);
+
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, function() {

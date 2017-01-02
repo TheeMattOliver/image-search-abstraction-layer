@@ -14,7 +14,7 @@ angular.module('imgurApp', ['ngRoute'])
                 templateUrl: "index.html",
                 controller: "searchCtrl"
             })
-            .when("/search", {
+            .when("#/search", {
                 controller: "searchCtrl",
                 templateUrl: "search.html"
             })
@@ -22,7 +22,7 @@ angular.module('imgurApp', ['ngRoute'])
                 controller: "searchCtrl",
                 templateUrl: "search.html"
             })
-            .when("/latest", {
+            .when("#/latest", {
                 controller: "listCtrl",
                 templateUrl: "list.html"
             })
@@ -34,6 +34,10 @@ angular.module('imgurApp', ['ngRoute'])
                 redirectTo: "/"
             })
     })
+
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.html5Mode(true);
+}]);
 
   .controller('searchCtrl', function($scope, $http) {
      $scope.search = function() {
