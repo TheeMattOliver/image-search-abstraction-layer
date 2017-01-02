@@ -14,13 +14,21 @@ angular.module('imgurApp', ['ngRoute'])
                 templateUrl: "index.html",
                 controller: "searchCtrl"
             })
+            .when("/search", {
+                controller: "searchCtrl",
+                templateUrl: "search.html"
+            })
             .when("/search/:item", {
                 controller: "searchCtrl",
-                templateUrl: "index.html"
+                templateUrl: "search.html"
             })
             .when("/latest", {
                 controller: "listCtrl",
                 templateUrl: "list.html"
+            })
+            .when("/images", {
+                controller: "listCtrl",
+                templateUrl: "images.html"
             })
             .otherwise({
                 redirectTo: "/"
@@ -41,6 +49,22 @@ angular.module('imgurApp', ['ngRoute'])
         });
     }  
   })
+  .controller('imagesCtrl', function($scope) {
+    $scope.renderList = function() {
+          $http.get('/latest')
+            .success(function(data, status, headers, config) {
+              console.log('Success!');
+              console.log("Here's the data: ", data);
+              $scope.results = data;
+            })
+            .error(function(data, status, headers, config) {
+              // log error
+              console.log('Error')
+            });
+        }  
+
+      $scope.renderList();
+    })
   .controller("listCtrl", function($scope) {
     $scope.renderList = function() {
           $http.get('/latest')

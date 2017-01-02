@@ -1,25 +1,26 @@
-<div class = "row">
-  <div class="col-md-6">
-    <h2>
-      Latest Searches from the Database
-    </h2>
-  </div>
-  <div class="col-md-3">
-  </div>
-  <div class="col-md-2">
-    <a style="margin-top:20px" class="btn btn-default" href="#/new/contact">New Search</a>
-  </div>
-  <div class="col-md-1">
-  </div>
-</div>
-<div class="container">
-  <table class="table table-hover">
-    <tbody>
-      <tr ng-repeat="item in results | orderBy:'timestamp'" style="cursor:pointer">
-        <td>
-          <a ng-href="#/contact/{{contact._id}}">{{ contact.firstName }} {{ contact.lastName }}</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div ng-controller="listCtrl">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1> Enter a search term to query the Imgur API:</h1>
+              <input type="text" ng-model="searchTerm">
+              <button class="btn btn-primary" ng-click="search()">Search</button>
+              <!-- <h3>"{{searchTerm}}"</h3> -->
+          </div>
+        </div>
+      </div>
+        
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1> Here are the 10 most recent entries in our database for searches:</h1> 
+         
+            {{results}}
+  
+
+        </div>
+      </div>
+    </div>
+  
+  </div><!-- controller -->
