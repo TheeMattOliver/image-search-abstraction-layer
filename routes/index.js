@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/public', express.static(path.join(__dirname + 'public')));
-
+app.use('/templates', express.static(path.join(__dirname, 'templates')));
 // render partials
 exports.partials = function(req, res){
   var name = req.params.name;
