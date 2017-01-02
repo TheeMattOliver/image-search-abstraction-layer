@@ -9,18 +9,10 @@ router.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-router.use('/public', express.static(path.join(__dirname + 'public')));
-app.use('/templates', express.static(path.join(__dirname, 'templates')));
-// render partials
-exports.partials = function(req, res){
-  var name = req.params.name;
-  res.render("partials/" + name );
-};
 
-router.use('/partials/:name', function(req, res) {
-  var name = req.params.name;
-  res.render('partials/' + name);
-})
+// // serve static files and templates
+// router.use('/public', express.static(path.join(__dirname + 'public')));
+// router.use('/templates', express.static(path.join(__dirname, 'templates')));
 
 
 // display 10 latest searches in raw JSON
@@ -51,7 +43,5 @@ router.get('/images', (req, res) => {
     console.log("Here's the data after we click the button on the Images page: ", data)
   })
 })
-
-
 
 module.exports = router;

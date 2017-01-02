@@ -1,4 +1,4 @@
-angular.module('imgurApp', ['ngRoute'])
+angular.module('imgurApp', ['ngResource', 'ngRoute'])
 
 // .service('item', function($http) {
 //   return $http({method: 'GET', url:'/search/:item'}).
@@ -14,9 +14,9 @@ angular.module('imgurApp', ['ngRoute'])
                 templateUrl: "index.html",
                 controller: "searchCtrl"
             })
-            .when("#/search", {
+            .when("/search", {
                 controller: "searchCtrl",
-                templateUrl: "search.html"
+                templateUrl: "/templates/search.html"
             })
             .when("/search/:item", {
                 controller: "searchCtrl",
@@ -34,10 +34,6 @@ angular.module('imgurApp', ['ngRoute'])
                 redirectTo: "/"
             })
     })
-
-  .config(['$locationProvider', function($locationProvider) {
-    $locationProvider.html5Mode(true);
-}]);
 
   .controller('searchCtrl', function($scope, $http) {
      $scope.search = function() {
