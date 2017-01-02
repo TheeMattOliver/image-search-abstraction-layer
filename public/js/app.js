@@ -1,4 +1,4 @@
-angular.module('imgurApp', ['ngResource', 'ngRoute'])
+angular.module('imgurApp', ['ngRoute'])
 
 // .service('item', function($http) {
 //   return $http({method: 'GET', url:'/search/:item'}).
@@ -16,7 +16,7 @@ angular.module('imgurApp', ['ngResource', 'ngRoute'])
             })
             .when("/search", {
                 controller: "searchCtrl",
-                templateUrl: "/templates/search.html"
+                templateUrl: "/search.html"
             })
             .when("/search/:item", {
                 controller: "searchCtrl",
