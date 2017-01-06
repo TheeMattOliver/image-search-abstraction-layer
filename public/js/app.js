@@ -14,9 +14,9 @@ angular.module('imgurApp', ['ngRoute'])
                 templateUrl: "index.html",
                 controller: "searchCtrl"
             })
-            .when("/search", {
+            .when("#/search", {
                 controller: "searchCtrl",
-                templateUrl: "/search.html"
+                templateUrl: "search.html"
             })
             .when("/search/:item", {
                 controller: "searchCtrl",
@@ -49,6 +49,7 @@ angular.module('imgurApp', ['ngRoute'])
         });
     }  
   })
+  // arbitrary controllers that don't do anything yet
   .controller('imagesCtrl', function($scope) {
     $scope.renderList = function() {
           $http.get('/latest')

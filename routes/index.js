@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-
 // // serve static files and templates
 // router.use('/public', express.static(path.join(__dirname + 'public')));
 // router.use('/templates', express.static(path.join(__dirname, 'templates')));
@@ -43,5 +42,6 @@ router.get('/images', (req, res) => {
     console.log("Here's the data after we click the button on the Images page: ", data)
   })
 })
+
 
 module.exports = router;
