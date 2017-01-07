@@ -1,7 +1,7 @@
 'use strict';
 
-describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+describe('imgurApp.version module', function() {
+  beforeEach(module('imgurApp.version'));
 
   describe('app-version directive', function() {
     it('should print current version', function() {

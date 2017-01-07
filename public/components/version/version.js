@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('myApp.version', [
-  'myApp.version.interpolate-filter',
-  'myApp.version.version-directive'
+angular.module('imgurApp.version', [
+  'imgurApp.version.interpolate-filter',
+  'imgurApp.version.version-directive'
 ])
 
 .value('version', '0.1');
