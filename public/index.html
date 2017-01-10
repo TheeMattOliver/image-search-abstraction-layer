@@ -51,9 +51,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active" ><a href="#/" data-toggle="tooltip" data-placement="top" title="Home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="#/" data-toggle="tooltip" data-placement="top" title="Home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 
-            <li><a href="#!/view1" data-toggle="tooltip" data-placement="top" title="Basic Search"><i class="fa fa-search" aria-hidden="true"></i> Basic Search</a></li>
+            <li class="active"><a href="#!/view1" data-toggle="tooltip" data-placement="top" title="Basic Search"><i class="fa fa-search" aria-hidden="true"></i> Basic Search</a></li>
 
             <li><a href="#!/view2"><i class="fa fa-database" aria-hidden="true"></i> Latest</a></li>
 
@@ -69,9 +69,9 @@
   <![endif]-->
 
   <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
-
+  <div class="container">
+  <div>Image search abstraction layer app: v<span app-version></span></div>
+  </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->

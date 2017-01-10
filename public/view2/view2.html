@@ -1,33 +1,25 @@
-<p>This is the partial for view 2.</p>
+<div ng-controller="View2Ctrl">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1> Here are the latest Imgur API searches <span ng-style="{color:'red'}">{{searchTerm}}</span>:</h1> 
+         
+            {{results}}
 
-<div class = "row">
-  <div class="col-md-6">
-    <h2>
-      Latest Searches from the Database
-    </h2>
-  </div>
-  <div class="col-md-3">
-  </div>
-  <div class="col-md-2">
-    <a style="margin-top:20px" class="btn btn-default" href="#/new/contact">New Search</a>
-  </div>
-  <div class="col-md-1">
-  </div>
-</div>
-<div class="container">
-  <!-- <table class="table table-hover">
-    <tbody>
-      <tr ng-repeat="item in results | orderBy:'timestamp'" style="cursor:pointer">
-        <td>
-          <a ng-href="#/contact/{{contact._id}}">{{ contact.firstName }} {{ contact.lastName }}</a>
-        </td>
-      </tr>
-    </tbody>
-  </table> -->
-</div>
+        </div>
+      </div>
+    </div>
 
+     <div class="col-md-3"></div>
+        <div class="col-md-2">
+          <a style="margin-top:20px" class="btn btn-default" href="#/new/contact">New Search</a>
+        </div>
+      <div class="col-md-1"></div>
 
-
+  
+</div><!-- controller -->
+ 
 
 
 <p>
