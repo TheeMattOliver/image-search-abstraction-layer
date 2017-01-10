@@ -1,7 +1,7 @@
 'use strict';
 
-describe('imgurApp.version module', function() {
-  beforeEach(module('imgurApp.version'));
+describe('myApp.version module', function() {
+  beforeEach(module('myApp.version'));
 
   describe('version service', function() {
     it('should return current version', inject(function(version) {

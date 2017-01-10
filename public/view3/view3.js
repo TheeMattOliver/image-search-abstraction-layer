@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('imgurApp.view3', ['ngRoute'])
+angular.module('myApp.view3', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view3', {
