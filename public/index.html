@@ -31,13 +31,6 @@
 
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
-  <style>
-      body {
-        min-height: 2000px;
-        padding-top: 70px;
-      }
-  </style>
-
 </head>
 <body>
 
@@ -82,7 +75,12 @@
   <!-- Angular lib -->
   <!--   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script> -->
-  
+  <!-- Nav toggle -->
+  <script>
+   $(".nav a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+});</script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>

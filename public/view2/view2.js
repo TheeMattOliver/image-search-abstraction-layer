@@ -9,6 +9,15 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
-
-}]);
+.controller('View2Ctrl', function($scope, $http) {
+      $http.get('/latest')
+        .success(function(data, status, headers, config) {
+          console.log('Success!');
+          console.log("Here's the data: ", data);
+          $scope.results = data;
+        })
+        .error(function(data, status, headers, config) {
+          // log error
+          console.log('Error')
+        });  
+  })

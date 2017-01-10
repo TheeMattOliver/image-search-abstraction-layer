@@ -20,7 +20,7 @@ router.get('/latest', (req, res) => {
   // empty object returns all documents
   // filter for only search term and date, so exclue _id field from results and sort in descending order
   // return onliy 10 most recent results
-	History.find({}, 'search_term timestamp -_id').sort('-timestamp').limit(10).then(results => {
+	History.find({}, 'search_term timestamp -_id').sort('-timestamp').limit(25).then(results => {
     res.json(results);
   })
 });
